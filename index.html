@@ -28,10 +28,88 @@
         <link href="assets/css/style.min.css" id="color-opt" class="theme-opt" rel="stylesheet" type="text/css">
         <!-- <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Naskh+Arabic:wght@400..700&family=Sacramento&display=swap" rel="stylesheet"> -->
           <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
           <style>
                :root {
                     --sacramento: Sacramento, cursive;
                     --arabic: 'Noto Naskh Arabic', serif;
+                    --tangerine: "Tangerine", cursive;
+               }
+
+               body {
+                    background-image: linear-gradient(#2c071a, #4f062b);
+               }
+
+               .gradient-linear {
+                    background-image: linear-gradient(#2c071a, #4f062b);
+               }
+               .flex-bg {
+                    display: flex;
+                    justify-content: center;
+               }
+
+               .mosque {
+                    display: block;
+                    margin: 0 auto;
+                    width: 40%;
+                    position: fixed;
+                    bottom: -25% !important;
+                    z-index: 1;
+               }
+
+               .bottom-left {
+                    z-index: 1 !important;
+                    position: absolute;
+                    width: 20%;
+                    bottom:
+                    0px;
+               }
+
+               .bottom-right {
+                    z-index: 1 !important;
+                    right: 0px !important;
+                    bottom: 0px !important;
+                    position: absolute;
+                    width: 20%;
+               }
+
+               @media (min-width: 768px) {
+                    /* Gaya CSS yang akan diterapkan untuk layar dengan lebar 768px atau lebih */
+                    .mosque {
+                         display: block;
+                         margin: 0 auto;
+                         width: 55%;
+                         position: fixed;
+                         bottom: -10% !important;
+                         z-index: 1;
+                    }
+               }
+
+               @media only screen and (max-width: 600px) {
+                    .mosque {
+                         display: block;
+                         margin: 0 auto;
+                         width: 95%;
+                         position: fixed;
+                         bottom: 0px !important;
+                         z-index: 1;
+                    }
+
+                    .bottom-left {
+                         display: none;
+                    }
+
+                    .bottom-right {
+                         display: none;
+                    }
+
+                    .container {
+                         margin-top: 50px !important;
+                    }
+               }
+
+               .text-red {
+                    color: #880538;
                }
           </style>
 
@@ -42,8 +120,8 @@
         <div id="preloader">
             <div id="status">
                 <div class="spinner">
-                    <div class="double-bounce1"></div>
-                    <div class="double-bounce2"></div>
+                    <div class="double-bounce1" style="background-color: #880538 !important;"></div>
+                    <div class="double-bounce2" style="background-color: #880538 !important;"></div>
                 </div>
             </div>
         </div>
@@ -51,22 +129,28 @@
 
         <!-- Start -->
          <!-- wow animate__animated animate__fadeInUp -->
-         <img src="assets/images/elemen.png" class="img-fluid avatar avatar-md-sm mt-2 mx-2 wow animate__animated animate__fadeInUp" alt="elemen" style="z-index: 999 !important; position: absolute;">
-         <img src="assets/images/elemen.png" class="img-fluid avatar avatar-md-sm mb-2 mx-2 wow animate__animated animate__fadeInUp" alt="elemen" style="z-index: 999 !important; right: 0px !important; position: absolute; bottom: 0px; right: 0px;">
-        <section class="bg-home pt-0 pb-0 pb-sm-0 d-flex align-items-center bg-gradient-primary wow animate__animated animate__fadeInUp" data-wow-delay=".1s" style="background: url('assets/images/bg-home.png') no-repeat center center fixed; background-size: cover; height: 100dvh;">
-          <div class="bg-overlay-white"></div>
-            <div class="container">
-                <div class="row align-items-center">
+         <img src="assets/images/themes/top-left.png" class="img-fluid mt-2 mx-2 wow animate__animated animate__fadeInUp" alt="elemen" style="z-index: 1 !important; position: absolute; width: 20%;">
+         <img src="assets/images/themes/bottom-left.png" class="img-fluid mt-2 mx-2 wow animate__animated animate__fadeInUp bottom-left" alt="elemen">
+         <img src="assets/images/themes/top-right.png" class="img-fluid mt-2 mx-2 wow animate__animated animate__fadeInUp" alt="elemen" style="z-index: 1 !important; right: 0px !important; position: absolute; top: 0px; width: 20%;">
+         <img src="assets/images/themes/bottom-right.png" class="img-fluid mt-2 mx-2 wow animate__animated animate__fadeInUp bottom-right" alt="elemen">
+         <div class="flex-bg">
+              <img src="assets/images/themes/bg-home.png" class="mosque" alt="">
+         </div>
+        <!-- <section class="bg-home pt-0 pb-0 pb-sm-0 d-flex align-items-center bg-gradient-primary wow animate__animated animate__fadeInUp" data-wow-delay=".1s" style="background: url('assets/images/bg-home.png') no-repeat center center fixed; background-size: cover; height: 100dvh;"> -->
+        <section class="bg-home pt-0 pt-sm-5 pb-0 pb-sm-0 d-flex align-items-center gradient-linear wow animate__animated animate__fadeInUp" data-wow-delay=".1s" style="height: 100dvh;">
+             <div class="bg-overlay-white"></div>
+             <div class="container pt-5" style="z-index: 1;">
+                  <div class="row align-items-center">
                     <div class="col-md-12">
-                        <div class="title-heading text-center wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
-                            <h1 class="display-1 fw-bold mb-3" style="font-family: var(--sacramento);">Tasyakuran Khitanan</h1>
-                          <img src="assets/images/kaiz-2.png" class="img-fluid avatar avatar-ex-large rounded-circle mx-auto shadow-lg border border-3 mb-3 jarallax" data-jarallax data-speed="0.5" alt="Kaiz">
-                          <h4 class="display-6 fw-bold mb-3"><span class="text-primary typewrite" data-period="2000" data-type='[ "Khaizan Rahman Karim" ]'></span></h4>
-                          <p class="text-muted mb-0">Kepada Yth</p>
-                          <p class="text-muted mb-1">Bapak/Ibu/Saudara/i</p>
-                          <h5 id="name" class="mb-3">Tamu</h5>
-                            <a href="content.html" class="btn btn-pills btn-primary"><i class="uil uil-envelope-open me-2"></i>Buka Undangan</a>
-                        </div>
+                         <div class="title-heading text-center wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
+                              <h1 class="display-2 fw-bold mb-3 text-red pt-5 pt-md-5 mt-md-5" style="font-family: var(--tangerine);">Tasyakuran Khitan</h1>
+                              <img src="assets/images/kaiz-2.png" class="img-fluid avatar avatar-ex-large rounded-circle mx-auto shadow-lg border border-3 mb-3 jarallax" data-jarallax data-speed="0.5" alt="Kaiz">
+                              <h4 class="display-5 fw-bold mb-3" style="font-family: var(--tangerine);"><span class="text-red typewrite" data-period="2000" data-type='[ "Khaizan Rahman Karim", "Khaizan", "Kaiz" ]'></span></h4>
+                              <p class="text-red mb-0">Kepada Yth</p>
+                              <p class="text-red mb-1">Bapak/Ibu/Saudara/i</p>
+                              <h5 id="name" class="text-red mb-3">Tamu</h5>
+                              <a href="content.html" class="btn btn-pills btn-danger"><i class="uil uil-envelope-open me-2"></i>Buka Undangan</a>
+                         </div>
                     </div><!--end col-->
 
 
