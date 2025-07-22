@@ -18,8 +18,6 @@
         <link href="assets/libs/tiny-slider/tiny-slider.css" rel="stylesheet">
         <link href="assets/libs/tobii/css/tobii.min.css" rel="stylesheet">
         <link href="assets/libs/animate.css/animate.min.css" rel="stylesheet">
-        <!-- Bootstrap Css -->
-        <!-- <link href="assets/css/bootstrap-green.min.css" id="bootstrap-style" class="theme-opt" rel="stylesheet" type="text/css"> -->
         <link href="assets/css/bootstrap.min.css" id="bootstrap-style" class="theme-opt" rel="stylesheet" type="text/css">
         <!-- Icons Css -->
         <link href="assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" type="text/css">
@@ -43,26 +41,17 @@
                .gradient-linear {
                     background-image: linear-gradient(#2c071a, #4f062b);
                }
+
                .flex-bg {
                     display: flex;
                     justify-content: center;
-               }
-
-               .mosque {
-                    display: block;
-                    margin: 0 auto;
-                    width: 40%;
-                    position: fixed;
-                    bottom: -25% !important;
-                    z-index: 1;
                }
 
                .bottom-left {
                     z-index: 1 !important;
                     position: absolute;
                     width: 20%;
-                    bottom:
-                    0px;
+                    bottom: 0px;
                }
 
                .bottom-right {
@@ -73,7 +62,7 @@
                     width: 20%;
                }
 
-               @media only screen and (min-width: 992px) {
+               @media only screen and (min-width: 1200px) {
                     .mosque {
                          display: block;
                          margin: 0 auto;
@@ -84,23 +73,35 @@
                     }
                }
 
-               @media (min-width: 768px) {
-                    /* Gaya CSS yang akan diterapkan untuk layar dengan lebar 768px atau lebih */
+               @media only screen and (min-device-width: 1024px) and (max-device-width: 1200px) {
                     .mosque {
                          display: block;
                          margin: 0 auto;
-                         width: 55%;
+                         width: 40%;
                          position: fixed;
                          bottom: -25% !important;
                          z-index: 1;
                     }
                }
 
-               @media only screen and (max-width: 600px) {
+               @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+                    /* Gaya CSS yang akan diterapkan untuk layar dengan lebar 768px atau lebih */
                     .mosque {
                          display: block;
                          margin: 0 auto;
-                         width: 95%;
+                         width: 80%;
+                         position: fixed;
+                         bottom: -25% !important;
+                         z-index: 1;
+                    }
+               }
+
+               /* @media only screen and (max-width: 600px) { */
+               @media only screen and (max-device-width: 768px)  {
+                    .mosque {
+                         display: block;
+                         margin: 0 auto;
+                         width: 95% !important;
                          position: fixed;
                          bottom: 0px !important;
                          z-index: 1;
@@ -194,7 +195,11 @@
         <script>
           let params = new URLSearchParams(document.location.search);
           let name = params.get('to');
-          document.getElementById('name').innerHTML = name;
+          if (name) {
+               document.getElementById('name').innerHTML = name;
+          } else {
+               document.getElementById('name').innerHTML = 'Tamu Undangan';
+          }
         </script>
     </body>
 </html>
